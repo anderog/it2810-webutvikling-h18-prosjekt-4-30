@@ -1,0 +1,23 @@
+{
+  "name": "search_app",
+  "version": "1.0.0",
+  "description": "Prosjekt 4 - it2810 Webutvikling - gruppe 30",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "author": "Gruppe 30 - it2810 Webutvikling",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "concurrently": "^4.0.1",
+    "express": "^4.16.4",
+    "mongoose": "^5.3.7"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.5"
+  }
+}
