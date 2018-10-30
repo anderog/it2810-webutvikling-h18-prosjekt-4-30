@@ -1,18 +1,26 @@
 const express = require('express');
-const Item = require('../../models/Item');
+const Pruduct = require('../../models/Product');
 
 const router = express.Router();
 
-// @route GET api/items
+// @route GET api/products
 router.get('/', (request, response) => {
-  Item.find()
+  Pruduct.find()
     .then(items => response.json(items))
 
     // https://mongoosejs.com/docs/guide.html
 });
 
+//@route GET api/products search
+// router.get('/cider', (request, response) => {
+//   Pruduct.find({$text: {$search: "Cider"}, style: "Cider"})
+//     .then(items => response.json(items))
+
+    // https://mongoosejs.com/docs/guide.html
+// });
+
 // Eks. on a post with the eks. schima in models/Item.js
-// // @route Post api/items
+// // @route Post api/pruducts
 // router.post('/', (request, response) => {
 //   const newItem = new Item({
 //     name: request.body.name
@@ -24,10 +32,10 @@ router.get('/', (request, response) => {
 //     // https://mongoosejs.com/docs/guide.html
 // });
 
-// @route DEL api/items/:id
+// @route DEL api/products/:id
 router.delete('/:id', (request, response) => {
   // request.params.id will fetch the id from the uri
-  Item.findById(request.params.id)
+  Pruduct.findById(request.params.id)
   .then(item => item.remove().then(() => response.json({success: true})))
   .catch(err => response.status(404).json({success: false}))
 

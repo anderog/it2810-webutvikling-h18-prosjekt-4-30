@@ -2,7 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose'); // Connector for MongoDB
 const bodyParser = require('body-parser'); // Let us use requests
 
-const items = require('./routes/api/items')
+const products = require('./routes/api/products')
 
 const app = express();
 
@@ -17,7 +17,7 @@ mongoose.connect(db, { useNewUrlParser: true })
   .catch(err => console.log(err));
 
 // Uses the routes from routes/api/items.js
-app.use('/api/items', items);
+app.use('/api/products', products);
 
 const port = 5000; // Sets port for server
 
