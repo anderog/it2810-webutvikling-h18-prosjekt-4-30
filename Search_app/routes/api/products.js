@@ -5,6 +5,7 @@ const router = express.Router();
 
 // @route GET api/products
 router.get('/', (request, response) => {
+  //Det som tidligere var i .find() er nå flyttet inn som første argument i .paginate.
   Product.paginate({Varetype: "Akevitt"},
     {
     page: 2,
