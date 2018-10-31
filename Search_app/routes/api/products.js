@@ -5,7 +5,11 @@ const router = express.Router();
 
 // @route GET api/products
 router.get('/', (request, response) => {
-  Product.find()
+  Product.paginate({Varetype: "Akevitt"},
+    {
+    page: 2,
+    limit: 10,
+    select: "Varenavn"})
     .then(items => response.json(items))
 
     // https://mongoosejs.com/docs/guide.html
