@@ -1,11 +1,11 @@
 const express = require('express');
-const Pruduct = require('../../models/Product');
+const Product = require('../../models/Product');
 
 const router = express.Router();
 
 // @route GET api/products
 router.get('/', (request, response) => {
-  Pruduct.find()
+  Product.find()
     .then(items => response.json(items))
 
     // https://mongoosejs.com/docs/guide.html
@@ -13,7 +13,7 @@ router.get('/', (request, response) => {
 
 //@route GET api/products search
 // router.get('/cider', (request, response) => {
-//   Pruduct.find({$text: {$search: "Cider"}, style: "Cider"})
+//   Product.find({$text: {$search: "Cider"}, style: "Cider"})
 //     .then(items => response.json(items))
 
     // https://mongoosejs.com/docs/guide.html
@@ -35,7 +35,7 @@ router.get('/', (request, response) => {
 // @route DEL api/products/:id
 router.delete('/:id', (request, response) => {
   // request.params.id will fetch the id from the uri
-  Pruduct.findById(request.params.id)
+  Product.findById(request.params.id)
   .then(item => item.remove().then(() => response.json({success: true})))
   .catch(err => response.status(404).json({success: false}))
 
