@@ -1,5 +1,5 @@
 module.exports = {
-  mongoURI: 'mongodb://it2810-30.idi.ntnu.no:27017/testBeer'
+  mongoURI: 'mongodb://it2810-30.idi.ntnu.no:27017/polet'
 }
 
 // mongodb: is the protocol definition
