@@ -10,7 +10,8 @@ import './App.css';
 class App extends Component {
   render() {
     return (
-      <Provider store={store}> {/* Wraps the React application and makes the Redux state available to all container components in the application’s hierarchy */}
+      // Provider: wraps the React application and makes the Redux state available to all container components in the application’s hierarchy
+      <Provider store={store}>
         <div className="App">
           <TitleBar/>
           <Products/>

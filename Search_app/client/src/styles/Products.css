@@ -1,9 +1,8 @@
 .list {
   margin-top: 2rem;
-  padding-left: 30rem;
-  padding-right: 30rem;
+  display: flex;
+  justify-content: center;
 }
-
 
 .Collapsible {
   padding: 2rem;
