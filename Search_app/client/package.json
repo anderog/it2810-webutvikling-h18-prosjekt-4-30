@@ -13,6 +13,7 @@
     "react-skylight": "^0.5.1",
     "reactstrap": "^6.5.0",
     "redux": "^4.0.1",
+    "redux-form": "^7.4.2",
     "redux-thunk": "^2.3.0"
   },
   "scripts": {
