@@ -7,11 +7,6 @@ import SearchField from "./SearchField";
 import "../styles/TitleBar.css";
 
 class TitleBar extends React.Component {
-  submit = values => {
-    let obj = JSON.parse('{ "$search":' + JSON.stringify(values.search) + "}");
-    console.log(obj);
-  };
-
   render() {
     return (
       <div>
@@ -26,7 +21,7 @@ class TitleBar extends React.Component {
           </Nav>
         </Navbar>
 
-        <SearchField onSubmit={this.submit} />
+        <SearchField />
 
         <SkyLight
           dialogStyles={{ backgroundColor: "#ecf0f1" }}
