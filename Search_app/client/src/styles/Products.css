@@ -1,0 +1,56 @@
+.list {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.Collapsible {
+  padding: 2rem;
+  margin: 1rem;
+  background-color: #f4f6f7;
+  -webkit-box-shadow: 1px 2px 8px rgba(0, 0, 0, .2);
+  -moz-box-shadow: 1px 2px 8px rgba(0, 0, 0, .2);
+  box-shadow: 1px 2px 8px rgba(0, 0, 0, .2);
+}
+
+.Collapsible__contentInner {
+  background-color: #f4f6f7;
+  padding: 3rem;
+  border-top: 0;
+}
+
+.Collapsible__contentInner p {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  line-height: 1rem;
+}
+
+.Collapsible__contentInner p:last-child {
+  margin-bottom: 0;
+}
+
+.Collapsible__trigger {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  padding: 1rem;
+  background-color: #f4f6f7;
+  font-size: 1.3rem;
+  color: #343A40;
+  border-bottom: 1px solid rgba(0, 0, 0, .1);
+}
+
+.Collapsible__trigger:after {
+  font-family: 'FontAwesome';
+  content: '\f107';
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  display: block;
+  transition: transform 300ms ease-in-out;
+}
+
+.Collapsible__trigger.is-open:after {
+  transform: rotateZ(180deg);
+}
