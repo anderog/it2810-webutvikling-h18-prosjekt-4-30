@@ -18,6 +18,14 @@ class SearchField extends React.Component {
             placeholder="Search..."
           />
         </form>
+        <form className="search-form" onSubmit={this.handleFilter}>
+          <Field
+            name="price"
+            component="input"
+            type="text"
+            placeholder="maxprice"
+          />
+        </form>
       </div>
     );
   }
@@ -26,10 +34,16 @@ class SearchField extends React.Component {
     e.preventDefault();
     this.props.search();
   };
+
+  handleFilter = e => {
+    e.preventDefault();
+    this.props.price();
+  };
 }
 
 const mapDispatchToProps = dispatch => ({
-  search: () => dispatch(fetchProducts())
+  search: () => dispatch(fetchProducts()),
+  price: () => dispatch(fetchProducts())
 });
 
 SearchField = connect(
