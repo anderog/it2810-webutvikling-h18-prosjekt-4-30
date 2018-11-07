@@ -5,16 +5,14 @@ const router = express.Router();
 
 // @route GET api/products
 router.get("/", (request, response) => {
-  //Det som tidligere var i .find() er nå flyttet inn som første argument i .paginate.
-  var query = {
-    $text: { $search: request.param("search") },
-    Pris: { $lte: parseInt(request.param("price")) }
-  };
-  Product.paginate(query, {
-    page: 1,
-    limit: 10,
-    select: "Varenavn Pris"
-  }).then(items => response.json(items));
+  Product.find(
+    {
+      Varetype: request.param("search"),
+      Pris: { $lte: parseInt(request.param("price")) }
+    },
+    "Varenavn Pris",
+    function(err, docs) {}
+  ).then(items => response.json(items));
 
   // https://mongoosejs.com/docs/guide.html
 });

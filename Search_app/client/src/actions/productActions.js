@@ -26,7 +26,7 @@ export const fetchProducts = () => (dispatch, getState) => {
     .then(data =>
       dispatch({
         type: FETCH_PRODUCTS,
-        payload: data.docs
+        payload: data
       })
     )
     .catch(err => {
