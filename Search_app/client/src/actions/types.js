@@ -1,3 +1,5 @@
 export const FETCH_PRODUCTS = "FETCH_PRODUCTS";
-export const POST_REVIEW = "POST_REVIEW";
+
+export const ADD_REVIEW = "ADD_REVIEW";
+export const UPDATE_REVIEW = "UPDATE_REVIEW";
 export const FETCH_REVIEWS = "FETCH_REVIEWS";

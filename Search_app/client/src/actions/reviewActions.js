@@ -1,4 +1,4 @@
-import { FETCH_REVIEWS } from "./types";
+import { FETCH_REVIEWS, ADD_REVIEW, UPDATE_REVIEW } from "./types";
 
 // Fetch reviews for a given productID
 export const fetchReviews = productID => dispatch => {
@@ -8,6 +8,40 @@ export const fetchReviews = productID => dispatch => {
       dispatch({
         type: FETCH_REVIEWS,
         payload: data
+      })
+    )
+    .catch(err => {
+      console.log(err);
+    });
+};
+
+export const addReview = ratingItem => dispatch => {
+  fetch("api/reviews/add", {
+    method: "POST",
+    body: JSON.stringify(ratingItem)
+  })
+    .then(res => res.json())
+    .then(review =>
+      dispatch({
+        type: ADD_REVIEW,
+        payload: review
+      })
+    )
+    .catch(err => {
+      console.log(err);
+    });
+};
+
+export const updateReview = ratingItem => dispatch => {
+  fetch("api/reviews/update", {
+    method: "PUT",
+    body: JSON.stringify(ratingItem)
+  })
+    .then(res => res.json())
+    .then(review =>
+      dispatch({
+        type: UPDATE_REVIEW,
+        payload: review
       })
     )
     .catch(err => {

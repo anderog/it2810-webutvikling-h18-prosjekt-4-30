@@ -2,7 +2,11 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import StarRating from "react-star-rating-component";
 
-import { fetchReviews } from "../actions/reviewActions";
+import {
+  fetchReviews,
+  updateReview,
+  addReview
+} from "../actions/reviewActions";
 
 class ProductReview extends Component {
   getSum(total, num) {
@@ -10,35 +14,54 @@ class ProductReview extends Component {
   }
 
   onStarClick(nextValue, prevValue, name) {
-    this.props.reviews.concat(nextValue);
+    let ratingItem = this.findRatingItem();
+    if (ratingItem.length === 0) {
+      // Add review for product in state and db
+      ratingItem = {
+        productID: this.props.productID,
+        reviews: [nextValue]
+      };
+      this.props.addReview(ratingItem);
+    } else {
+      // Update the reviewItem in state and db
+      ratingItem[0].reviews.concat(nextValue);
+      this.props.updateReview(ratingItem[0]);
+    }
   }
 
   componentWillMount() {
     this.props.fetchReviews(this.props.productID);
   }
 
-  render() {
+  // Checks if there is reviews for productID, returns empty list if not
+  findRatingItem() {
     const ratingItem = this.props.reviewItems.filter(
       review => review.productID === this.props.productID
     );
-    console.log(ratingItem);
-    let rating;
-    ratingItem.length > 0 ? (rating = ratingItem[0].reviews) : (rating = []);
-    console.log(rating);
+    return ratingItem;
+  }
+
+  render() {
+    const ratingItem = this.findRatingItem();
+    let ratingList;
+    ratingItem.length > 0
+      ? (ratingList = ratingItem[0].reviews)
+      : (ratingList = []);
+
     let averageRating;
-    rating.length > 0
-      ? (averageRating = rating.reduce(this.getSum) / rating.length)
+    ratingList.length > 0
+      ? (averageRating = ratingList.reduce(this.getSum) / ratingList.length)
       : (averageRating = 0);
     return (
-      <div className={"rating"}>
+      <div className={"ratingList"}>
         <StarRating
           name="productRating"
           starCount={5}
-          value={averageRating.toFixed(0)}
+          value={averageRating.toFixed(2).valueOf()}
           onStarClick={this.onStarClick.bind(this)}
         />
         <p>
-          Antall reviews: {rating.length > 0 ? rating.length : 0} Average:
+          Antall reviews: {ratingList.length} Average:
           {averageRating.toFixed(2)}
         </p>
       </div>
@@ -52,5 +75,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { fetchReviews }
+  { fetchReviews, updateReview, addReview }
 )(ProductReview);

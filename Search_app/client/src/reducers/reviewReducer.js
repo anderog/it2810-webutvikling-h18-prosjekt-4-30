@@ -1,4 +1,4 @@
-import { POST_REVIEW, FETCH_REVIEWS } from "../actions/types";
+import { UPDATE_REVIEW, ADD_REVIEW, FETCH_REVIEWS } from "../actions/types";
 
 const initialState = {
   reviewItems: []
@@ -12,10 +12,14 @@ export default function(state = initialState, action) {
         ...state,
         reviewItems: state.reviewItems.concat(action.payload)
       };
-    case POST_REVIEW:
+    case ADD_REVIEW:
       return {
         ...state,
-        reviewList: action
+        reviewItem: action.payload
+      };
+    case UPDATE_REVIEW:
+      return {
+        ...state
       };
     default:
       return state;

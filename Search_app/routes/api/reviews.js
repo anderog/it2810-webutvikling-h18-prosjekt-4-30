@@ -3,14 +3,24 @@ const Review = require("../../models/Review");
 
 const router = express.Router();
 
-// Eks. on a post with the eks. schema in models/Review.js
-// @route Post api/reviews/add
+// @route POST api/reviews/add
 router.post("/add", (request, response) => {
+  console.log(request.body.productID);
   const newReview = new Review({
     productID: request.body.productID,
     reviews: request.body.reviews
   });
   newReview.save().then(items => response.json(items));
+});
+
+// @route PUT api/reviews/update
+router.put("/update", (request, response) => {
+  let review = Review.where({
+    productID: request.body.productID
+  });
+  review
+    .update({ reviews: request.body.ratingList })
+    .then(items => response.json(items));
 });
 
 // @route GET api/reviews
