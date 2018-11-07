@@ -1,21 +1,37 @@
+//import { MongooseQueryParser } from "mongoose-query-parser";
+
 const express = require("express");
 const Product = require("../../models/Product");
 
 const router = express.Router();
 
-// @route GET api/products
-router.get("/", (request, response) => {
-  Product.find(
-    {
-      Varetype: request.param("search"),
-      Pris: { $lte: parseInt(request.param("price")) }
-    },
-    "Varenavn Pris",
-    function(err, docs) {}
-  ).then(items => response.json(items));
+//const parser = new MongooseQueryParser();
 
-  // https://mongoosejs.com/docs/guide.html
+// @route GET api/products
+
+router.get("/", (request, response) => {
+  var query = { $text: { $search: request.query.search } };
+  var options = {
+    page: 1,
+    limit: 10,
+    select: "Varenavn"
+  };
+  Product.paginate(query, options).then(items => response.json(items));
 });
+
+// router.get("/", (request, response) => {
+//   //console.log(parser.parse(request));
+//   Product.find(
+//     {
+//       Varetype: request.query.search,
+//       Pris: { $lte: parseInt(request.query.price) || 25000 }
+//     },
+//     "Varenavn Pris",
+//     function(err, docs) {}
+//   ).then(items => response.json(items));
+//
+//   // https://mongoosejs.com/docs/guide.html
+// });
 
 //@route GET api/products search
 // router.get('/cider', (request, response) => {
