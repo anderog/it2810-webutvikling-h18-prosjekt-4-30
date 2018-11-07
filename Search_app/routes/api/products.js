@@ -9,13 +9,35 @@ router.get("/", (request, response) => {
   Product.paginate(
     { Varetype: "Akevitt" },
     {
-      page: 2,
+      page: 1,
+      limit: 10
+    }
+  ).then(items => response.json(items));
+});
+
+// @route GET api/products/hvitvin
+router.get("/hvitvin", (request, response) => {
+  //Det som tidligere var i .find() er nå flyttet inn som første argument i .paginate.
+  Product.paginate(
+    { Varetype: "Hvitvin" },
+    {
+      page: 1,
       limit: 10,
       select: "Varenavn"
     }
   ).then(items => response.json(items));
+});
 
-  // https://mongoosejs.com/docs/guide.html
+// @route GET api/products/rodvin
+router.get("/rodvin", (request, response) => {
+  Product.paginate(
+    { Varetype: "Rødvin" },
+    {
+      page: 1,
+      limit: 10,
+      select: "Varenavn"
+    }
+  ).then(items => response.json(items));
 });
 
 //@route GET api/products search

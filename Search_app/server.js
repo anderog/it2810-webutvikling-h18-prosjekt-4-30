@@ -3,6 +3,7 @@ const mongoose = require("mongoose"); // Connector for MongoDB
 const bodyParser = require("body-parser"); // Let us use requests
 
 const products = require("./routes/api/products");
+const reviews = require("./routes/api/reviews");
 
 const app = express();
 
@@ -22,6 +23,7 @@ mongoose
 
 // Uses the routes from routes/api/items.js
 app.use("/api/products", products);
+app.use("/api/reviews", reviews);
 
 const port = 5000; // Sets port for server
 
