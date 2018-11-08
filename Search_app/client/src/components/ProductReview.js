@@ -24,7 +24,7 @@ class ProductReview extends Component {
       this.props.addReview(ratingItem);
     } else {
       // Update the reviewItem in state and db
-      ratingItem[0].reviews.concat(nextValue);
+      ratingItem[0].reviews.push(nextValue);
       this.props.updateReview(ratingItem[0]);
     }
   }
@@ -57,12 +57,12 @@ class ProductReview extends Component {
         <StarRating
           name="productRating"
           starCount={5}
-          value={averageRating.toFixed(2).valueOf()}
+          value={averageRating.toFixed(2)}
           onStarClick={this.onStarClick.bind(this)}
         />
         <p>
-          Antall reviews: {ratingList.length} Average:
-          {averageRating.toFixed(2)}
+          Antall reviews: {ratingList.length} {"  "}
+          Gjennomsnitt: {averageRating.toFixed(2)}
         </p>
       </div>
     );

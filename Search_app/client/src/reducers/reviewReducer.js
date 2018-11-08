@@ -15,11 +15,18 @@ export default function(state = initialState, action) {
     case ADD_REVIEW:
       return {
         ...state,
-        reviewItem: action.payload
+        reviewItems: state.reviewItems.concat(action.payload)
       };
     case UPDATE_REVIEW:
+      let updatedReviews = state.reviewItems.map(
+        reviewItem =>
+          reviewItem.productID === action.payload.productID
+            ? { ...reviewItem, reviews: action.payload.reviews }
+            : reviewItem
+      );
       return {
-        ...state
+        ...state,
+        reviewItems: updatedReviews
       };
     default:
       return state;

@@ -18,6 +18,9 @@ export const fetchReviews = productID => dispatch => {
 export const addReview = ratingItem => dispatch => {
   fetch("api/reviews/add", {
     method: "POST",
+    headers: {
+      "content-type": "application/json"
+    },
     body: JSON.stringify(ratingItem)
   })
     .then(res => res.json())
@@ -35,6 +38,9 @@ export const addReview = ratingItem => dispatch => {
 export const updateReview = ratingItem => dispatch => {
   fetch("api/reviews/update", {
     method: "PUT",
+    headers: {
+      "content-type": "application/json"
+    },
     body: JSON.stringify(ratingItem)
   })
     .then(res => res.json())

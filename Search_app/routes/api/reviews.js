@@ -5,7 +5,6 @@ const router = express.Router();
 
 // @route POST api/reviews/add
 router.post("/add", (request, response) => {
-  console.log(request.body.productID);
   const newReview = new Review({
     productID: request.body.productID,
     reviews: request.body.reviews
@@ -19,7 +18,8 @@ router.put("/update", (request, response) => {
     productID: request.body.productID
   });
   review
-    .update({ reviews: request.body.ratingList })
+    .findOneAndUpdate({ reviews: request.body.reviews })
+    .setOptions({ new: true })
     .then(items => response.json(items));
 });
 
