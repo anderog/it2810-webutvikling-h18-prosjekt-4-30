@@ -4,6 +4,7 @@ import { ThreeBounce } from "better-react-spinkit";
 import Collapsible from "react-collapsible";
 
 import { fetchProducts } from "../actions/productActions";
+import ProductReview from "./ProductReview";
 
 import "../styles/Products.css";
 
@@ -16,14 +17,7 @@ class Products extends Component {
     const productItems = this.props.products.map(item => (
       <div key={item._id}>
         <Collapsible trigger={item.Varenavn} className="inner">
-          <p>
-            This is the collapsible content. It can be any element or React
-            component you like.
-          </p>
-          <p>
-            It can even be another Collapsible component. Check out the next
-            section!
-          </p>
+          <ProductReview productID={item._id} />
         </Collapsible>
       </div>
     ));

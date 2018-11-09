@@ -1,8 +1,9 @@
-const express = require('express');
-const mongoose = require('mongoose'); // Connector for MongoDB
-const bodyParser = require('body-parser'); // Let us use requests
+const express = require("express");
+const mongoose = require("mongoose"); // Connector for MongoDB
+const bodyParser = require("body-parser"); // Let us use requests
 
-const products = require('./routes/api/products')
+const products = require("./routes/api/products");
+const reviews = require("./routes/api/reviews");
 
 const app = express();
 
@@ -10,14 +11,19 @@ const app = express();
 app.use(bodyParser.json());
 
 // MongoDB config og connection
-const db = require('./config/keys').mongoURI;
+const db = require("./config/keys").mongoURI;
 
-mongoose.connect(db, { useNewUrlParser: true })
-  .then(() => console.log('MongoDB Connected...'))
+mongoose
+  .connect(
+    db,
+    { useNewUrlParser: true }
+  )
+  .then(() => console.log("MongoDB Connected..."))
   .catch(err => console.log(err));
 
 // Uses the routes from routes/api/items.js
-app.use('/api/products', products);
+app.use("/api/products", products);
+app.use("/api/reviews", reviews);
 
 const port = 5000; // Sets port for server
 
