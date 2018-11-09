@@ -35,10 +35,9 @@ class ProductReview extends Component {
 
   // Checks if there is reviews for productID, returns empty list if not
   findRatingItem() {
-    const ratingItem = this.props.reviewItems.filter(
+    return this.props.reviewItems.filter(
       review => review.productID === this.props.productID
     );
-    return ratingItem;
   }
 
   render() {
@@ -57,7 +56,7 @@ class ProductReview extends Component {
         <StarRating
           name="productRating"
           starCount={5}
-          value={averageRating.toFixed(2)}
+          value={Number(averageRating.toFixed(0))}
           onStarClick={this.onStarClick.bind(this)}
         />
         <p>
