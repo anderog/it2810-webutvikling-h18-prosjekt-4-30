@@ -5,6 +5,7 @@ import Collapsible from "react-collapsible";
 
 import { fetchProducts } from "../actions/productActions";
 import ProductReview from "./ProductReview";
+import ProductInformation from "./ProductInformation";
 
 import "../styles/Products.css";
 
@@ -17,6 +18,7 @@ class Products extends Component {
     const productItems = this.props.products.map(item => (
       <div key={item._id}>
         <Collapsible trigger={item.Varenavn} className="inner">
+          <ProductInformation productItem={item} />
           <ProductReview productID={item._id} />
         </Collapsible>
       </div>

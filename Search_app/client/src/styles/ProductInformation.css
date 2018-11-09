@@ -1,0 +1,14 @@
+.infoContainer {
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 5rem;
+}
+
+.row2 {
+    padding-left: 10rem;
+    padding-right: 10rem;
+}
+
+.infoHeader {
+    padding-bottom: 1rem;
+}
