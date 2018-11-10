@@ -1,1 +1,4 @@
 export const FETCH_PRODUCTS = "FETCH_PRODUCTS";
+export const PAGE_INCREMENT = "PAGE_INCREMENT";
+export const PAGE_DECREMENT = "PAGE_DECREMENT";
+export const PAGE_RESET = "PAGE_RESET";

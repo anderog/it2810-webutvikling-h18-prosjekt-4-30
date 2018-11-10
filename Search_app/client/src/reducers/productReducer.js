@@ -1,9 +1,9 @@
-import { FETCH_PRODUCTS } from '../actions/types';
+import { FETCH_PRODUCTS } from "../actions/types";
 
 const initialState = {
   items: [],
   loading: true
-}
+};
 
 // Evaluate the type
 export default function(state = initialState, action) {
@@ -12,8 +12,9 @@ export default function(state = initialState, action) {
       return {
         ...state,
         items: action.payload,
-        loading: false
-      }
+        loading: false,
+        totalPages: action.pages
+      };
     default:
       return state;
   }

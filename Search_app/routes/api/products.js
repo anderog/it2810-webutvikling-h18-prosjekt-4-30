@@ -9,7 +9,7 @@ router.get("/", (request, response) => {
   Product.paginate(
     { $text: { $search: request.param("search") } },
     {
-      page: 1,
+      page: request.query.page,
       limit: 10,
       select: "Varenavn"
     }

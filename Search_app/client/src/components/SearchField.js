@@ -25,11 +25,13 @@ class SearchField extends React.Component {
   handleSubmit = e => {
     e.preventDefault();
     this.props.search();
+    this.props.page();
   };
 }
 
 const mapDispatchToProps = dispatch => ({
-  search: () => dispatch(fetchProducts())
+  search: () => dispatch(fetchProducts()),
+  page: () => dispatch({ type: "PAGE_RESET" })
 });
 
 SearchField = connect(
