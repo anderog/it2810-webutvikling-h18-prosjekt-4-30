@@ -1,6 +1,6 @@
 module.exports = {
-  mongoURI: 'mongodb://it2810-30.idi.ntnu.no:27017/polet'
-}
+  mongoURI: "mongodb://it2810-30.idi.ntnu.no:27017/polet"
+};
 
 // mongodb: is the protocol definition
 // localhost: 27017 is the server we are connecting to
