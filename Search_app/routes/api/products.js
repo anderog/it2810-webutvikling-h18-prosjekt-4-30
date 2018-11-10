@@ -7,7 +7,10 @@ const router = express.Router();
 router.get("/", (request, response) => {
   //Det som tidligere var i .find() er nå flyttet inn som første argument i .paginate.
   Product.paginate(
-    { $text: { $search: request.param("search") } },
+    {
+      $text: { $search: request.param("search") },
+      Varetype: request.param("type")
+    },
     {
       page: request.query.page,
       limit: 10
