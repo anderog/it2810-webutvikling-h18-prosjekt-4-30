@@ -1,0 +1,36 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700");
+
+.wrapper {
+  padding-top: 2rem;
+}
+
+span {
+  font-family: "Roboto", sans-serif;
+  color: #343a40;
+  padding: 0.6rem;
+}
+
+button {
+  font-family: "Roboto", sans-serif;
+  color: #343a40;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+button:hover {
+  color: #1c2023;
+}
+
+button:active {
+  transform: scale(1.1);
+}
+
+button:disabled,
+button[disabled] {
+  color: #bdc3c7;
+}
+
+*:focus {
+  outline: none !important;
+}

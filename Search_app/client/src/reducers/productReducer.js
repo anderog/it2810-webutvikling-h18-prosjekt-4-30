@@ -12,7 +12,8 @@ export default function(state = initialState, action) {
       return {
         ...state,
         items: action.payload,
-        loading: false
+        loading: false,
+        totalPages: action.pages
       };
     default:
       return state;
