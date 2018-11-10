@@ -1,13 +1,16 @@
 import React from "react";
 import { connect } from "react-redux";
+import { fetchProducts } from "../actions/productActions";
 
 class Category extends React.Component {
   setRødvin = () => {
     this.props.dispatch({ type: "SET_RØDVIN" });
+    this.props.dispatch(fetchProducts());
   };
 
   setHvitvin = () => {
     this.props.dispatch({ type: "SET_HVITVIN" });
+    this.props.dispatch(fetchProducts());
   };
 
   render() {
