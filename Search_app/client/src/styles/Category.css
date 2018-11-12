@@ -1,0 +1,27 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700");
+
+div.bc button {
+  font-family: "Roboto", sans-serif;
+  color: #a2a79e;
+  cursor: pointer;
+  background-color: #f4f6f7;
+  padding: 0.75rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  border-radius: 0.3rem;
+  border: 1px solid #a2a79e;
+}
+
+div.bc button:hover {
+  color: #343a40;
+  border: 1px solid #343a40;
+}
+
+div.bc button:active {
+  transform: scale(1.1);
+}
+
+div.bc button:focus {
+  border: 1px solid #343a40;
+  color: #343a40;
+}
