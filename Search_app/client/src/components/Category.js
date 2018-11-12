@@ -32,6 +32,37 @@ class Category extends React.Component {
     this.props.dispatch({ type: "PAGE_RESET" });
     this.props.dispatch(fetchProducts());
   };
+
+  setDruebrennevin = () => {
+    this.props.dispatch({ type: "SET_DRUEBRENNEVIN" });
+    this.props.dispatch({ type: "PAGE_RESET" });
+    this.props.dispatch(fetchProducts());
+  };
+
+  setLikør = () => {
+    this.props.dispatch({ type: "SET_LIKØR" });
+    this.props.dispatch({ type: "PAGE_RESET" });
+    this.props.dispatch(fetchProducts());
+  };
+
+  setVodka = () => {
+    this.props.dispatch({ type: "SET_VODKA" });
+    this.props.dispatch({ type: "PAGE_RESET" });
+    this.props.dispatch(fetchProducts());
+  };
+
+  setIPA = () => {
+    this.props.dispatch({ type: "SET_IPA" });
+    this.props.dispatch({ type: "PAGE_RESET" });
+    this.props.dispatch(fetchProducts());
+  };
+
+  setIPA = () => {
+    this.props.dispatch({ type: "SET_SIDER" });
+    this.props.dispatch({ type: "PAGE_RESET" });
+    this.props.dispatch(fetchProducts());
+  };
+
   // Typer som kan legges til, Druebrennevin, Likør, India pale ale, Sider, Vodka
   render() {
     return (
@@ -42,6 +73,11 @@ class Category extends React.Component {
           <button onClick={this.setHvitvin}>Hvitvin</button>
           <button onClick={this.setAkevitt}>Akevitt</button>
           <button onClick={this.setWhisky}>Whisky</button>
+          <button onClick={this.setDruebrennevin}>Druebrennevin</button>
+          <button onClick={this.setLikør}>Likør</button>
+          <button onClick={this.setVodka}>Vodka</button>
+          <button onClick={this.setIPA}>IPA</button>
+          <button onClick={this.setSider}>Sider</button>
         </div>
       </div>
     );
