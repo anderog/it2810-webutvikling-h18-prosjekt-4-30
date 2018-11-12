@@ -25,7 +25,7 @@ router.put("/update", (request, response) => {
 
 // @route GET api/reviews
 router.get("/", (request, response) => {
-  Review.find({ productID: request.param("productID") }).then(items =>
+  Review.find({ productID: request.query.productID }).then(items =>
     response.json(items)
   );
 });
