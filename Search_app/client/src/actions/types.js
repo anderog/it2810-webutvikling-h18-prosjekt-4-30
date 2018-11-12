@@ -11,3 +11,5 @@ export const FETCH_REVIEWS = "FETCH_REVIEWS";
 export const TYPE_RESET = "TYPE_RESET";
 export const SET_RØDVIN = "SET_RØDVIN";
 export const SET_HVITVIN = "SET_HVITVIN";
+export const SET_AKEVITT = "SET_AKEVITT";
+export const SET_WHISKY = "SET_WHISKY";
