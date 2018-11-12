@@ -6,10 +6,9 @@ export const fetchProducts = () => (dispatch, getState) => {
     getState().form.searchValue &&
     getState().form.searchValue.values &&
     getState().form.searchValue.values.search;
-  console.log(getState().endpoint.type);
   const endpoint = getState().endpoint.type;
   fetch(
-    `/api/products?type=${endpoint || ""}&&search=${search || ""}&&page=${
+    `/api/products?Varetype=${endpoint}&&search=${search || ""}&&page=${
       getState().page.page
     }`
   )

@@ -1,5 +1,4 @@
-import { SET_RØDVIN } from "../actions/types";
-import { SET_HVITVIN } from "../actions/types";
+import { SET_HVITVIN, SET_RØDVIN, TYPE_RESET } from "../actions/types";
 
 const initialState = {
   type: ""
@@ -7,6 +6,10 @@ const initialState = {
 
 export default function(state = initialState, action) {
   switch (action.type) {
+    case TYPE_RESET:
+      return {
+        type: ""
+      };
     case SET_RØDVIN:
       return {
         type: "Rødvin"

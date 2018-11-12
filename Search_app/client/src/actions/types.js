@@ -8,5 +8,6 @@ export const ADD_REVIEW = "ADD_REVIEW";
 export const UPDATE_REVIEW = "UPDATE_REVIEW";
 export const FETCH_REVIEWS = "FETCH_REVIEWS";
 
+export const TYPE_RESET = "TYPE_RESET";
 export const SET_RØDVIN = "SET_RØDVIN";
 export const SET_HVITVIN = "SET_HVITVIN";
