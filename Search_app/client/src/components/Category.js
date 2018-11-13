@@ -57,7 +57,7 @@ class Category extends React.Component {
     this.props.dispatch(fetchProducts());
   };
 
-  setIPA = () => {
+  setSider = () => {
     this.props.dispatch({ type: "SET_SIDER" });
     this.props.dispatch({ type: "PAGE_RESET" });
     this.props.dispatch(fetchProducts());
