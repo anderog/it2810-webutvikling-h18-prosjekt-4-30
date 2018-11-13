@@ -6,7 +6,12 @@ export const fetchProducts = () => (dispatch, getState) => {
     getState().form.searchValue &&
     getState().form.searchValue.values &&
     getState().form.searchValue.values.search;
-  fetch(`/api/products?search=${search || ""}&&page=${getState().page.page}`)
+  const endpoint = getState().endpoint.type;
+  fetch(
+    `/api/products?Varetype=${endpoint}&&search=${search || ""}&&page=${
+      getState().page.page
+    }`
+  )
     .then(res => res.json())
     .then(data =>
       dispatch({
