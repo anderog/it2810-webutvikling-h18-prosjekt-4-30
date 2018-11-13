@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { fetchProducts } from "../actions/productActions";
 import "../styles/Category.css";
+import Collapsible from "react-collapsible";
 
 class Category extends React.Component {
   typeReset = () => {
@@ -68,16 +69,18 @@ class Category extends React.Component {
     return (
       <div className="wrapper">
         <div className="bc">
-          <button onClick={this.typeReset}>Alle typer</button>
-          <button onClick={this.setRødvin}>Rødvin</button>
-          <button onClick={this.setHvitvin}>Hvitvin</button>
-          <button onClick={this.setAkevitt}>Akevitt</button>
-          <button onClick={this.setWhisky}>Whisky</button>
-          <button onClick={this.setDruebrennevin}>Druebrennevin</button>
-          <button onClick={this.setLikør}>Likør</button>
-          <button onClick={this.setVodka}>Vodka</button>
-          <button onClick={this.setIPA}>IPA</button>
-          <button onClick={this.setSider}>Sider</button>
+          <Collapsible trigger="Velg varetype" className="categoryCollaps">
+            <button onClick={this.typeReset}>Alle typer</button>
+            <button onClick={this.setRødvin}>Rødvin</button>
+            <button onClick={this.setHvitvin}>Hvitvin</button>
+            <button onClick={this.setAkevitt}>Akevitt</button>
+            <button onClick={this.setWhisky}>Whisky</button>
+            <button onClick={this.setDruebrennevin}>Druebrennevin</button>
+            <button onClick={this.setLikør}>Likør</button>
+            <button onClick={this.setVodka}>Vodka</button>
+            <button onClick={this.setIPA}>IPA</button>
+            <button onClick={this.setSider}>Sider</button>
+          </Collapsible>
         </div>
       </div>
     );
