@@ -18,3 +18,6 @@ export const SET_LIKØR = "SET_LIKØR";
 export const SET_VODKA = "SET_VODKA";
 export const SET_IPA = "SET_IPA";
 export const SET_SIDER = "SET_SIDER";
+
+export const PRICE_ASC = "PRICE_ASC";
+export const PRICE_DESC = "PRICE_DESC";
