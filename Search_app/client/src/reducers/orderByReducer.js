@@ -1,7 +1,8 @@
-import { PRICE_ASC, PRICE_DESC } from "../actions/types";
+import { PRICE_ASC, PRICE_DESC, NAME_ASC, NAME_DESC } from "../actions/types";
 
 const initialState = {
-  order: ""
+  orderBy: "Varenavn",
+  order: 1
 };
 
 export default function(state = initialState, action) {
@@ -16,6 +17,17 @@ export default function(state = initialState, action) {
         orderBy: "Pris",
         order: -1
       };
+    case NAME_ASC:
+      return {
+        orderBy: "Varenavn",
+        order: 1
+      };
+    case NAME_DESC:
+      return {
+        orderBy: "Varenavn",
+        order: -1
+      };
+
     default:
       return state;
   }

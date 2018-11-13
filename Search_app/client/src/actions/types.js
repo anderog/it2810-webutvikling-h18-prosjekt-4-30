@@ -21,3 +21,5 @@ export const SET_SIDER = "SET_SIDER";
 
 export const PRICE_ASC = "PRICE_ASC";
 export const PRICE_DESC = "PRICE_DESC";
+export const NAME_ASC = "NAME_ASC";
+export const NAME_DESC = "NAME_DESC";
