@@ -9,7 +9,6 @@ router.get("/", (request, response) => {
   let query = {};
   let order = {};
   order[request.query.orderBy] = request.query.order;
-  console.log(request.query.order);
   request.query.search !== ""
     ? (query["$text"] = { $search: request.query.search })
     : null;
