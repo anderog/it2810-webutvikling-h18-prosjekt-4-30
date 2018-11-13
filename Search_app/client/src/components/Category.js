@@ -3,8 +3,15 @@ import { connect } from "react-redux";
 import { fetchProducts } from "../actions/productActions";
 import "../styles/Category.css";
 import Collapsible from "react-collapsible";
+import { Collapse } from "reactstrap";
 
 class Category extends React.Component {
+  constructor(props) {
+    super(props);
+    this.toggle = this.toggle.bind(this);
+    this.state = { collapse: false };
+  }
+
   typeReset = () => {
     this.props.dispatch({ type: "TYPE_RESET" });
     this.props.dispatch({ type: "PAGE_RESET" });
@@ -64,12 +71,19 @@ class Category extends React.Component {
     this.props.dispatch(fetchProducts());
   };
 
+  toggle = () => {
+    this.setState({
+      collapse: !this.state.collapse
+    });
+  };
+
   // Typer som kan legges til, Druebrennevin, Likør, India pale ale, Sider, Vodka
   render() {
     return (
       <div className="wrapper">
         <div className="bc">
-          <Collapsible trigger="Velg varetype" className="categoryCollaps">
+          <button onClick={this.toggle}>+</button>
+          <Collapse isOpen={this.state.collapse}>
             <button onClick={this.typeReset}>Alle typer</button>
             <button onClick={this.setRødvin}>Rødvin</button>
             <button onClick={this.setHvitvin}>Hvitvin</button>
@@ -80,7 +94,7 @@ class Category extends React.Component {
             <button onClick={this.setVodka}>Vodka</button>
             <button onClick={this.setIPA}>IPA</button>
             <button onClick={this.setSider}>Sider</button>
-          </Collapsible>
+          </Collapse>
         </div>
       </div>
     );
