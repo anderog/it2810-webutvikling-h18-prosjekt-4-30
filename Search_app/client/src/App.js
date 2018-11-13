@@ -4,6 +4,8 @@ import { Provider } from "react-redux";
 import store from "./store";
 import TitleBar from "./components/TitleBar";
 import Products from "./components/Products";
+import Category from "./components/Category";
+import OrderBy from "./components/OrderBy";
 
 import "./App.css";
 
@@ -14,6 +16,8 @@ class App extends Component {
       <Provider store={store}>
         <div className="App">
           <TitleBar />
+          <Category />
+          <OrderBy />
           <Products />
         </div>
       </Provider>

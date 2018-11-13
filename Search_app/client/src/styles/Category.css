@@ -1,0 +1,37 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700");
+
+.toggleButton {
+  display: flex;
+  padding-left: 35%;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.7rem;
+  font-weight: 500;
+  color: #a2a79e;
+  cursor: pointer;
+}
+
+.toggleButton:hover {
+  color: #343a40;
+}
+
+.container button {
+  font-family: "Roboto", sans-serif;
+  color: #a2a79e;
+  cursor: pointer;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.container button:hover {
+  color: #343a40;
+  border-bottom: 2px solid #a2a79e;
+}
+
+.toggleButton:active {
+  transform: none !important;
+}
+
+.container button:focus {
+  border-bottom: 2px solid #a2a79e;
+  color: #343a40;
+}
