@@ -7,10 +7,15 @@ export const fetchProducts = () => (dispatch, getState) => {
     getState().form.searchValue.values &&
     getState().form.searchValue.values.search;
   const endpoint = getState().endpoint.type;
+  console.log(
+    `/api/products?Varetype=${endpoint}&&search=${search || ""}&&page=${
+      getState().page.page
+    }&&orderBy=${getState().order.orderBy}&&order=${getState().order.order}`
+  );
   fetch(
     `/api/products?Varetype=${endpoint}&&search=${search || ""}&&page=${
       getState().page.page
-    }`
+    }&&orderBy=${getState().order.orderBy}&&order=${getState().order.order}`
   )
     .then(res => res.json())
     .then(data =>
