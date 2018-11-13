@@ -2,14 +2,16 @@ import React from "react";
 import { connect } from "react-redux";
 import { fetchProducts } from "../actions/productActions";
 import "../styles/Category.css";
-import Collapsible from "react-collapsible";
 import { Collapse } from "reactstrap";
 
 class Category extends React.Component {
   constructor(props) {
     super(props);
     this.toggle = this.toggle.bind(this);
-    this.state = { collapse: false };
+    this.state = {
+      collapse: false,
+      buttonText: "+"
+    };
   }
 
   typeReset = () => {
@@ -82,8 +84,10 @@ class Category extends React.Component {
     return (
       <div className="wrapper">
         <div className="bc">
-          <button onClick={this.toggle}>+</button>
-          <Collapse isOpen={this.state.collapse}>
+          <button className="toggleButton" onClick={this.toggle}>
+            {this.state.collapse ? "–" : "+"}
+          </button>
+          <Collapse className="container" isOpen={this.state.collapse}>
             <button onClick={this.typeReset}>Alle typer</button>
             <button onClick={this.setRødvin}>Rødvin</button>
             <button onClick={this.setHvitvin}>Hvitvin</button>
