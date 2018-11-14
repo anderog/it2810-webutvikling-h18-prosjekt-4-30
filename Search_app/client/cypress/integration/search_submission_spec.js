@@ -1,6 +1,8 @@
-describe("Search submission", () => {
+describe("Search submission", function() {
   const searchText = "Gilde";
+
   beforeEach(() => {
+    cy.visit("/");
     cy.get(".search-form")
       .children()
       .type(searchText)
