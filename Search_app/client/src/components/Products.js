@@ -11,10 +11,6 @@ import ProductInformation from "./ProductInformation";
 import "../styles/Products.css";
 
 class Products extends Component {
-  state = {
-    prevProps: this.props.page
-  };
-
   componentWillMount() {
     this.props.fetchProducts();
   }
@@ -40,7 +36,7 @@ class Products extends Component {
         {this.props.loading ? (
           <ThreeBounce size={8} gutter={6} />
         ) : (
-          <div>{productItems}</div>
+          <div className="productList">{productItems}</div>
         )}
         <Pagination className="pagination" />
       </div>

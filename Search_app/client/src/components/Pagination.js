@@ -23,11 +23,16 @@ class Pagination extends React.Component {
       return (
         <div className="wrapper">
           <div>
-            <button onClick={this.decrement} disabled={this.props.page === 1}>
+            <button
+              className="decrementButton"
+              onClick={this.decrement}
+              disabled={this.props.page === 1}
+            >
               &lt;
             </button>
             <span>{`${this.props.page} av ${this.props.totalPages}`}</span>
             <button
+              className="incrementButton"
               onClick={this.increment}
               disabled={
                 this.props.page === this.props.totalPages ||
