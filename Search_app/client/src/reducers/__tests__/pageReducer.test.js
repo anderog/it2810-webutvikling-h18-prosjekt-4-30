@@ -11,11 +11,11 @@ const initialState = {
 };
 
 describe("authenticate reducer", () => {
-  it("returns the initial state", () => {
+  it("returns the initialstate", () => {
     expect(reducer(undefined, {})).toEqual(initialState);
   });
 
-  describe("authenticate reducer PAGE_INCREMENT, PAGE_DECREMENT, PAGE_RESET", () => {
+  describe("Check reducer cases PAGE_INCREMENT, PAGE_DECREMENT, PAGE_RESET", () => {
     it("handles PAGE_INCREMENT", () => {
       expect(reducer(initialState, { type: PAGE_INCREMENT })).toEqual({
         page: initialState.page + 1
