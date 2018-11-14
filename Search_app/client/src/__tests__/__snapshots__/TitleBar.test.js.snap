@@ -1,0 +1,76 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Matches snapshot 1`] = `
+<div>
+  <Navbar
+    color="dark"
+    dark={true}
+    expand={false}
+    tag="nav"
+  >
+    <NavbarBrand
+      className="title"
+      href="/"
+      tag="a"
+    >
+      POLUTFORSKER
+    </NavbarBrand>
+    <Nav
+      className="ml-auto"
+      navbar={true}
+      tag="ul"
+      vertical={false}
+    >
+      <NavItem
+        tag="li"
+      >
+        <NavLink
+          onClick={[Function]}
+          tag="a"
+        >
+          info
+        </NavLink>
+      </NavItem>
+    </Nav>
+  </Navbar>
+  <ReduxForm />
+  <SkyLight
+    className=""
+    closeButtonStyle={
+      Object {
+        "cursor": "pointer",
+        "fontSize": "1.8em",
+        "position": "absolute",
+        "right": "10px",
+        "top": "0px",
+      }
+    }
+    closeOnEsc={true}
+    dialogStyles={
+      Object {
+        "backgroundColor": "#ecf0f1",
+      }
+    }
+    hideOnOverlayClicked={true}
+    overlayStyles={
+      Object {
+        "backgroundColor": "rgba(0,0,0,0.3)",
+        "display": "none",
+        "height": "100%",
+        "left": "0px",
+        "position": "fixed",
+        "top": "0px",
+        "transitionProperty": "all",
+        "transitionTimingFunction": "ease",
+        "width": "100%",
+        "zIndex": "99",
+      }
+    }
+    showOverlay={true}
+    title="Informasjon"
+    transitionDuration={200}
+  >
+    Her kan vi skrive informasjon om siden!
+  </SkyLight>
+</div>
+`;
