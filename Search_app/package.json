@@ -20,6 +20,8 @@
     "mongoose-paginate": "^5.0.3"
   },
   "devDependencies": {
+    "@babel/plugin-proposal-optional-chaining": "^7.0.0",
+    "mongodb-memory-server": "^2.7.2",
     "nodemon": "^1.18.5"
   }
 }
