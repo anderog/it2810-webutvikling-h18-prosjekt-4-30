@@ -70,7 +70,29 @@ exports[`Matches snapshot 1`] = `
     title="Informasjon"
     transitionDuration={200}
   >
-    Her kan vi skrive informasjon om siden!
+    Velkommen til Polutforsker! 
+    <br />
+    Nettsiden er basert på Vinmonopolets database, som finnes
+    <a
+      href="https://www.vinmonopolet.no/datadeling"
+      target="_blank"
+    >
+       
+      her.
+    </a>
+    <br />
+     
+    <br />
+    På denne siden er det funksjonalitet for å søke etter varenavn og noen populære varetyper. 
+    <br />
+    <br />
+    Søk på varenavn gjøres i søkefeltet, og returnerer alle produkter som inneholder minst ett av søkeordene. Varetype kan velges ved å trykke på «+»-symbolet.
+    <br />
+    <br />
+    Videre kan søkeresultatet sorteres ved med valgene i dropdown-menyen.
+    <br />
+    <br />
+    Utvidet produktinformasjon kan vises ved å trykke på produktnavnet. Her er det også mulighet for å legge til (uendelig mange) reviews av det valgte produktet.
   </SkyLight>
 </div>
 `;
