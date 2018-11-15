@@ -1,0 +1,74 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Matches snapshot 1`] = `
+<div
+  className="paragraph"
+>
+  <p>
+    <strong>
+      Smak:
+    </strong>
+     
+  </p>
+  <p>
+    <strong>
+      Lukt:
+    </strong>
+     
+  </p>
+  <p>
+    <strong>
+      Farge:
+    </strong>
+     
+  </p>
+  <div
+    className="infoContainer"
+  >
+    <div
+      className="row1"
+    >
+      <h4
+        className="infoHeader"
+      >
+        Info
+      </h4>
+      <p>
+        Volum: 
+         liter
+      </p>
+      <p>
+        Alkohol: 
+         %
+      </p>
+      <p>
+        Land: 
+      </p>
+    </div>
+    <div
+      className="row2"
+    >
+      <h4
+        className="infoHeader"
+      >
+        Pris
+      </h4>
+      <p>
+        Pris: 
+         ,-
+      </p>
+      <p>
+        Literpris: 
+         ,-
+      </p>
+      <p>
+        Pris per alkoholenhet:
+         
+        NaN
+        
+         ,-
+      </p>
+    </div>
+  </div>
+</div>
+`;
