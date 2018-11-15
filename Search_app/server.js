@@ -21,7 +21,7 @@ mongoose
   .then(() => console.log("MongoDB Connected..."))
   .catch(err => console.log(err));
 
-// Uses the routes from routes/api/items.js
+// Uses the routes from routes/api/
 app.use("/api/products", products);
 app.use("/api/reviews", reviews);
 

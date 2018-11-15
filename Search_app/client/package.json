@@ -1,6 +1,7 @@
 {
   "name": "client",
   "version": "0.1.0",
+  "homepage" : "http://it2810-30.idi.ntnu.no/prosjekt4",
   "private": true,
   "dependencies": {
     "better-react-spinkit": "^2.0.4",

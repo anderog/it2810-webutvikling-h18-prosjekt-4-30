@@ -11,7 +11,7 @@ class TitleBar extends React.Component {
     return (
       <div>
         <Navbar color="dark" dark>
-          <NavbarBrand className="title" href="/">
+          <NavbarBrand className="title" href="/prosjekt4/">
             POLUTFORSKER
           </NavbarBrand>
           <Nav className="ml-auto" navbar>

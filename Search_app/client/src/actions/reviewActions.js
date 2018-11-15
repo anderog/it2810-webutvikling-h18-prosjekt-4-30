@@ -1,8 +1,13 @@
 import { FETCH_REVIEWS, ADD_REVIEW, UPDATE_REVIEW } from "./types";
 
+const urlPrefix =
+  process.env.NODE_ENV === "production"
+    ? "http://it2810-30.idi.ntnu.no:5000/api"
+    : "/api";
+
 // Fetch reviews for a given productID
 export const fetchReviews = productID => dispatch => {
-  fetch(`/api/reviews?productID=${productID}`)
+  fetch(`${urlPrefix}/reviews?productID=${productID}`)
     .then(res => res.json())
     .then(data =>
       dispatch({
@@ -16,7 +21,7 @@ export const fetchReviews = productID => dispatch => {
 };
 
 export const addReview = ratingItem => dispatch => {
-  fetch("api/reviews/add", {
+  fetch(`${urlPrefix}/reviews/add`, {
     method: "POST",
     headers: {
       "content-type": "application/json"
@@ -36,7 +41,7 @@ export const addReview = ratingItem => dispatch => {
 };
 
 export const updateReview = ratingItem => dispatch => {
-  fetch("api/reviews/update", {
+  fetch(`${urlPrefix}/reviews/update`, {
     method: "PUT",
     headers: {
       "content-type": "application/json"

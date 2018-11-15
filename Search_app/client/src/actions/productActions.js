@@ -1,5 +1,10 @@
 import { FETCH_PRODUCTS } from "./types";
 
+const urlPrefix =
+  process.env.NODE_ENV === "production"
+    ? "http://it2810-30.idi.ntnu.no:5000/api"
+    : "/api";
+
 // Fetch products from given api URL
 export const fetchProducts = () => (dispatch, getState) => {
   const search =
@@ -7,13 +12,8 @@ export const fetchProducts = () => (dispatch, getState) => {
     getState().form.searchValue.values &&
     getState().form.searchValue.values.search;
   const endpoint = getState().endpoint.type;
-  console.log(
-    `/api/products?Varetype=${endpoint}&&search=${search || ""}&&page=${
-      getState().page.page
-    }&&orderBy=${getState().order.orderBy}&&order=${getState().order.order}`
-  );
   fetch(
-    `/api/products?Varetype=${endpoint}&&search=${search || ""}&&page=${
+    `${urlPrefix}/products?Varetype=${endpoint}&&search=${search || ""}&&page=${
       getState().page.page
     }&&orderBy=${getState().order.orderBy}&&order=${getState().order.order}`
   )
