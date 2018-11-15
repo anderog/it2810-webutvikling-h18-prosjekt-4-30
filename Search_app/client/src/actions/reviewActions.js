@@ -15,6 +15,7 @@ export const fetchReviews = productID => dispatch => {
     });
 };
 
+// Add new review for given product
 export const addReview = ratingItem => dispatch => {
   fetch("api/reviews/add", {
     method: "POST",
@@ -35,6 +36,7 @@ export const addReview = ratingItem => dispatch => {
     });
 };
 
+// Update review for given review
 export const updateReview = ratingItem => dispatch => {
   fetch("api/reviews/update", {
     method: "PUT",

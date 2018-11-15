@@ -1,12 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { fetchProducts } from "../actions/productActions";
-import {
-  ButtonDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem
-} from "reactstrap";
+import { ButtonDropdown, DropdownToggle, DropdownMenu } from "reactstrap";
 import "../styles/OrderBy.css";
 
 class OrderBy extends React.Component {

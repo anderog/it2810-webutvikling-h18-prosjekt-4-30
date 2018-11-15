@@ -6,6 +6,7 @@ import { fetchProducts } from "../actions/productActions";
 import "../styles/SearchField.css";
 
 class SearchField extends React.Component {
+  // Render a form Field from the redux-form lib
   render() {
     return (
       <div className="head-bar">
@@ -22,6 +23,9 @@ class SearchField extends React.Component {
     );
   }
 
+  // Handle the submit on the form
+  // Providing a handler as a prop
+  // Called by onSubmit in the redux-form
   handleSubmit = e => {
     e.preventDefault();
     this.props.search();
@@ -29,11 +33,13 @@ class SearchField extends React.Component {
   };
 }
 
+// Receives the dispatch() method and return callback props.
 const mapDispatchToProps = dispatch => ({
   search: () => dispatch(fetchProducts()),
   page: () => dispatch({ type: "PAGE_RESET" })
 });
 
+// Connects component to store and dispatch store state to the component props
 SearchField = connect(
   () => ({}),
   mapDispatchToProps
