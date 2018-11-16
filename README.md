@@ -58,10 +58,6 @@ Nettsiden baserer seg på Vinmonopolets produktdatabase, som finnes [her](https:
 
 * En bruker kan velge å søke blant alle produkter, eller blant én av ni forskjellige varetyper. Denne filtreringen kan også kombineres med input i søkefeltet.
 
-  
-
-* Det vises maksimalt ti produkter per side. Det er valgt ti elementer per side for å unngå uendelig mengde med scrolling, som resulterer i mer brukervennlighet.
-
 
 
 * Det vises maksimalt ti produkter per side.  Man kan bla mellom sider i resultatsettet med knapper på bunnen av nettsiden. Disse knappene viser også hvilken side du er på og hvor mange sider det finnes totalt i det aktuelle søket. 
@@ -135,7 +131,7 @@ Vi har delt opp testene i to filer, én for noen generelle sjekker av siden(*sta
 Vi bruker metoder som `beforeEach()` for å sette opp siden likt før hver test, og `it()` for å lage selve testene. Hver *it*-metode er laget med beskrivende navn på testen, f.eks *should accept searchbar input* for å teste om søkefeltet aksepterer input fra brukeren.
  
 ### Jest
-For Jest og Unit tester har vi fokusert på å teste reducerne og laget noen snapshot tester for å teste at applikasjonen rendrer t. Reducertestene er enkle tester som tester om  en gitt reducer case, blir den forventede verdien, og at staten settes riktig globalt. Vi har valgt å ikke gjøre mye ntsesting inne i komponentene fordi mye av dette blir dekket i end-to-end testingen. 
+For Jest og Unit tester har vi fokusert på å teste reducerne og laget noen snapshot tester for å teste at applikasjonen rendrer ordentlig. Reducer-testene er enkle tester som tester om  en gitt reducer case, blir den forventede verdien, og at staten settes riktig globalt. Vi har valgt å ikke gjøre mye enhetsesting inne i komponentene fordi mye av dette blir dekket i end-to-end testingen. 
 
 ### Testing uten rammeverk
 
