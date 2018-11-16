@@ -17,7 +17,7 @@ Kjøres fra *.../gruppe_30/Search_app*
 Server: http://localhost:5000
 Client: http://localhost:3000
 
-##Kjøring av tester
+## Kjøring av tester
 
 - Jest og Unit tester *.../gruppe_30/Search_app/client*:
 `npm run test`
@@ -77,12 +77,14 @@ Nettsiden baserer seg på Vinmonopolets produktdatabase, som finnes [her](https:
   
 
 #### Backend
-Stikkord: 
-- Bruker query-string, her kan man enkelt legge til flere kriterier i søket
-- Delt opp backend, og har ikke alt i en server.js-fil
-- Bruker ulike metoder til databasen GET, POST og PUT
-- Delt opp i filer for review og product
 
+Backend mottar en query-string som brukes til å generere en spørring til data-
+basen. Dette gjør det lett å utvide spørringsfunksjonaliteten til siden. Det
+kan sendes GET, POST og PUT kall til databasen.
+
+Backenden er oppdelt, og vi har unngått å legge alt inn i en server.js fil
+for å gjøre eventuelle utvidelser lettere. Produkter og anmeldelser er også
+tydelig oppdelt som distinkte deler av databasen.
 
   
 
@@ -111,7 +113,7 @@ Stikkord:
 
 
 
-* Vi valgte å bruke REST istedenfor GraphQL fordi vi tror at vi ville brukt mer tid på å sette opp GraphQL, samtidig som vi hadde litt erfaring med REST, slik at dette lettere. 
+* Vi valgte å bruke REST istedenfor GraphQL fordi vi tror at vi ville brukt mer tid på å sette opp GraphQL, samtidig som vi hadde litt erfaring med REST.
 
 * Vi har valgt å bruke en query-string i APIet for å dynamisk kunne bygge opp en spørring i søket vårt. Her er det veldig enkelt å legge til flere filtreringer om man ønsker det
 
@@ -124,6 +126,8 @@ Stikkord:
 
 
 *  Vi valgte å bruke et bibliotek som heter [react-collapsible]([https://www.npmjs.com/package/react-collapsible](https://www.npmjs.com/package/react-collapsible)) for å vise detaljert produktinformasjon. Dette biblioteket er valgt fordi det gjør det veldig lett å sette om denne funksjonaliteten, samt at det er lett å endre designet på denne til å passe vårt ønske.
+
+* reactstrap er også et bibliotek er mye brukt, da dette har mange gode, ferdige komponenter, som er lette og fleksible å ta i bruk, med god dokumentasjon.
 
  ## Testing
 
