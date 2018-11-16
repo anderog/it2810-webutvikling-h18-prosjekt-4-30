@@ -4,6 +4,7 @@ import rootReducer from "./reducers";
 
 const initialState = {};
 
+//redux-thunk: Looks at every action that passes through the system, and if it’s a function, it calls that function.
 const middleware = [thunk];
 
 // The store holds the complete state tree of your app.

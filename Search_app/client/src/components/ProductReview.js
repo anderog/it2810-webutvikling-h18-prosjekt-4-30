@@ -29,6 +29,7 @@ class ProductReview extends Component {
     }
   }
 
+  // Fetch reviews whenever component renders
   componentWillMount() {
     this.props.fetchReviews(this.props.productID);
   }

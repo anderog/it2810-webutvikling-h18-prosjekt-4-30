@@ -15,8 +15,7 @@ class Products extends Component {
     prevProps: this.props.page
   };
 
-  // Called whenever component renders
-  // Fetches products
+  // Fetch products whenever component renders
   componentWillMount() {
     this.props.fetchProducts();
   }

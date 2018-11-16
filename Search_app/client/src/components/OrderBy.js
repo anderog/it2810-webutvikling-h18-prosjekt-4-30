@@ -7,12 +7,15 @@ import "../styles/OrderBy.css";
 class OrderBy extends React.Component {
   constructor(props) {
     super(props);
+
+    // Sets the component default state for the dropdown
     this.state = {
       dropdownOpen: false,
       dropdownText: "Sorter etter"
     };
   }
 
+  // Changes the state for the dropdown
   toggleDropdown = () => {
     this.setState({
       dropdownOpen: !this.state.dropdownOpen
