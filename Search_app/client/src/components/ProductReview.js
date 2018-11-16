@@ -9,7 +9,8 @@ import {
 } from "../actions/reviewActions";
 
 class ProductReview extends Component {
-  getSum(total, num) {
+  // Method for summation of an array with integers
+  static getSum(total, num) {
     return total + num;
   }
 
@@ -44,14 +45,18 @@ class ProductReview extends Component {
   render() {
     const ratingItem = this.findRatingItem();
     let ratingList;
+    // Checks if ratingItem is an empty list, if not set ratingList with the correct reviews
     ratingItem.length > 0
       ? (ratingList = ratingItem[0].reviews)
       : (ratingList = []);
 
     let averageRating;
+    // To calculate average rating, we need to make sure there is reviews, otherwise a runtimeError would occur(because of devision by 0)
     ratingList.length > 0
-      ? (averageRating = ratingList.reduce(this.getSum) / ratingList.length)
+      ? (averageRating =
+          ratingList.reduce(ProductReview.getSum) / ratingList.length)
       : (averageRating = 0);
+
     return (
       <div className={"ratingList"}>
         <StarRating
