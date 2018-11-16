@@ -96,7 +96,7 @@ Stikkord:
 
 * Til databasen bruke Mongo DB, med Mongoose.   
 
-*  Det er tatt i bruk flere komponentbiblioteker, særlig *reactstrap* er mye brukt.
+* Det er tatt i bruk flere komponentbiblioteker, særlig *reactstrap* er mye brukt.
 
 * Cypress er brukt til end-to-end-testing
 
@@ -107,7 +107,7 @@ Stikkord:
 
  Vi har valgt å bruke et MERN fullstack oppsett. En MERN applikasjon er bygget opp ved hjelp av MongoDB, Express, React og Node. Grunnen til at vi har valgt akkurat denne fullstacken er fordi den var et ganske naturlig valg, da den inneholder store deler av teknologi kravene for oppgaven, samt at denne brukes mye på reelle prosjekter og det var en stack vi ønsket å se nærmere på.
 
-**TODO** legge til diagram for MERN-stack
+![MERN-stack](uploads/add417dcd4f6651977ddbec2fbde1474/MERN-stack.png)
 
 
 Vi valgte å bruke REST istedenfor GraphQL fordi vi tror at vi ville brukt mer tid på å sette opp GraphQL, samtidig som vi hadde litt erfaring med REST, slik at dette lettere. 
@@ -118,6 +118,7 @@ Vi valgte å bruke REST istedenfor GraphQL fordi vi tror at vi ville brukt mer t
 
 
 * Vi valgte å bruke Redux fremfor Mobox hovedsakelig fordi dette var en teknologi vi ønsket å lære, og da denne teknologien ofte blir etterspurt og brukt i næringslivet.
+![redux_flow](uploads/edc51017c61868fe977a9d14d386bed2/redux_flow.png)
 
 *  Vi valgte å bruke et bibliotek som heter [react-collapsible]([https://www.npmjs.com/package/react-collapsible](https://www.npmjs.com/package/react-collapsible)) for å vise detaljert produktinformasjon. Dette biblioteket er valgt fordi det gjør det veldig lett å sette om denne funksjonaliteten, samt at det er lett å endre designet på denne til å passe vårt ønske.
 
@@ -136,3 +137,6 @@ For Jest og Unit tester har vi fokusert på å teste reducerne og laget noen sna
 ### Testing uten rammeverk
 
 Underveis har funksjonaliteten til siden blitt testet i Chrome og Edge.
+
+## Komponent-struktur
+![Komponent_tre](uploads/0e60d9e83d2493964eae078a252b06cd/Komponent_tre.png)
