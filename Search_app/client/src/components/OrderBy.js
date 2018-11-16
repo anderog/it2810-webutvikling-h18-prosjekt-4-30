@@ -4,6 +4,7 @@ import { fetchProducts } from "../actions/productActions";
 import { ButtonDropdown, DropdownToggle, DropdownMenu } from "reactstrap";
 import "../styles/OrderBy.css";
 
+// This component is a dropdown menu with sorting options
 class OrderBy extends React.Component {
   constructor(props) {
     super(props);

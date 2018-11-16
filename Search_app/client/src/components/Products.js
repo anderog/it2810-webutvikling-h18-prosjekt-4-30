@@ -21,7 +21,7 @@ class Products extends Component {
   }
 
   // Called directly after rendering
-  // Checks if the resived page prop is different from se component state prop prevProps
+  // Checks if the received page prop is different from se component state prop prevProps
   // If True -> on different page and execute a fetch for this page.
   componentDidUpdate(prevProps) {
     if (this.props.page !== prevProps.page) {

@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 
 import "../styles/Pagination.css";
 
+// This component contains functionality for switching pages
 class Pagination extends React.Component {
   // Dispatch to increment the page number by 1
   // Triggers a state change
