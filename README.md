@@ -68,7 +68,7 @@ Nettsiden baserer seg på Vinmonopolets produktdatabase, som finnes [her](https:
 
   
 
-* Man kan sortere resultatsette ved å bruke innstillingene i dropdown-menyen over settet. Denne sorteringen gjennomføres på hele settet. Dette gjør at man kan bla frem og tilbake i sidene og den valgte sorteringen vil forbli. Vi har også valgt at standard sortering er etter alfabetisk rekkefølge, da vi mener dette er det mest naturlige.
+* Man kan sortere resultatsettet ved å bruke innstillingene i dropdown-menyen over settet. Denne sorteringen gjennomføres på hele settet. Dette gjør at man kan bla frem og tilbake i sidene og den valgte sorteringen vil forbli. Vi har også valgt at standard sortering er etter alfabetisk rekkefølge, da vi mener dette er det mest naturlige.
 
   
 
@@ -82,7 +82,7 @@ Stikkord:
 - Delt opp backend, og har ikke alt i en server.js-fil
 - Bruker ulike metoder til databasen GET, POST og PUT
 - Delt opp i filer for review og product
-**TODO** Beskrive backend. Her kan vi kanskje ha diagram?
+
 
   
 
@@ -105,12 +105,13 @@ Stikkord:
 
 ## Diskusjon rundt løsningsvalg
 
- Vi har valgt å bruke et MERN fullstack oppsett. En MERN applikasjon er bygget opp ved hjelp av MongoDB, Express, React og Node. Grunnen til at vi har valgt akkurat denne fullstacken er fordi den var et ganske naturlig valg, da den inneholder store deler av teknologi kravene for oppgaven, samt at denne brukes mye på reelle prosjekter og det var en stack vi ønsket å se nærmere på.
+* Vi har valgt å bruke et MERN fullstack oppsett. En MERN applikasjon er bygget opp ved hjelp av MongoDB, Express, React og Node. Grunnen til at vi har valgt akkurat denne fullstacken er fordi den var et ganske naturlig valg, da den inneholder store deler av teknologi kravene for oppgaven, samt at denne brukes mye på reelle prosjekter og det var en stack vi ønsket å se nærmere på.
 
-![MERN-stack](uploads/add417dcd4f6651977ddbec2fbde1474/MERN-stack.png)
+<a href="https://ibb.co/b7tM5L"><img src="https://preview.ibb.co/iZQCC0/MERN-stack.png" alt="MERN-stack" border="0"></a>
 
 
-Vi valgte å bruke REST istedenfor GraphQL fordi vi tror at vi ville brukt mer tid på å sette opp GraphQL, samtidig som vi hadde litt erfaring med REST, slik at dette lettere. 
+
+* Vi valgte å bruke REST istedenfor GraphQL fordi vi tror at vi ville brukt mer tid på å sette opp GraphQL, samtidig som vi hadde litt erfaring med REST, slik at dette lettere. 
 
 * Vi har valgt å bruke en query-string i APIet for å dynamisk kunne bygge opp en spørring i søket vårt. Her er det veldig enkelt å legge til flere filtreringer om man ønsker det
 
@@ -118,7 +119,9 @@ Vi valgte å bruke REST istedenfor GraphQL fordi vi tror at vi ville brukt mer t
 
 
 * Vi valgte å bruke Redux fremfor Mobox hovedsakelig fordi dette var en teknologi vi ønsket å lære, og da denne teknologien ofte blir etterspurt og brukt i næringslivet.
-![redux_flow](uploads/edc51017c61868fe977a9d14d386bed2/redux_flow.png)
+
+<a href="https://ibb.co/df0OKf"><img src="https://preview.ibb.co/bOrkX0/redux-flow.png" alt="redux-flow" border="0"></a>
+
 
 *  Vi valgte å bruke et bibliotek som heter [react-collapsible]([https://www.npmjs.com/package/react-collapsible](https://www.npmjs.com/package/react-collapsible)) for å vise detaljert produktinformasjon. Dette biblioteket er valgt fordi det gjør det veldig lett å sette om denne funksjonaliteten, samt at det er lett å endre designet på denne til å passe vårt ønske.
 
@@ -139,4 +142,4 @@ For Jest og Unit tester har vi fokusert på å teste reducerne og laget noen sna
 Underveis har funksjonaliteten til siden blitt testet i Chrome og Edge.
 
 ## Komponent-struktur
-![Komponent_tre](uploads/0e60d9e83d2493964eae078a252b06cd/Komponent_tre.png)
+<a href="https://ibb.co/nj20X0"><img src="https://preview.ibb.co/iW8w5L/Komponent-tre.png" alt="Komponent-tre" border="0"></a>
