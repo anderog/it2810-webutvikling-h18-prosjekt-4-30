@@ -62,16 +62,16 @@ class OrderBy extends React.Component {
           {this.state.dropdownText}
         </DropdownToggle>
         <DropdownMenu>
-          <button className="priceButton" onClick={this.priceAsc}>
+          <button className="priceAscButton" onClick={this.priceAsc}>
             Pris (lavest først)
           </button>
-          <button className="priceButton" onClick={this.priceDesc}>
+          <button className="priceDescButton" onClick={this.priceDesc}>
             Pris (høyest først)
           </button>
-          <button className="priceButton" onClick={this.nameAsc}>
+          <button className="nameAscButton" onClick={this.nameAsc}>
             Navn (stigende)
           </button>
-          <button className="nameButton" onClick={this.nameDesc}>
+          <button className="nameDescButton" onClick={this.nameDesc}>
             Navn (synkende)
           </button>
         </DropdownMenu>

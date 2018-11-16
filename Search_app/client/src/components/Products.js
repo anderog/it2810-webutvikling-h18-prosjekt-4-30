@@ -46,7 +46,7 @@ class Products extends Component {
         {this.props.loading ? (
           <ThreeBounce size={8} gutter={6} />
         ) : (
-          <div>{productItems}</div>
+          <div className="productList">{productItems}</div>
         )}
         <Pagination className="pagination" />
       </div>
