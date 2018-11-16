@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "../styles/ProductInformation.css";
 
 export default class ProductInformation extends Component {
+  // Sets up and render the expanded product information
   render() {
     const product = this.props.productItem;
     return (
@@ -18,6 +19,7 @@ export default class ProductInformation extends Component {
         <div className={"infoContainer"}>
           <div className={"row1"}>
             <h4 className={"infoHeader"}>Info</h4>
+            <p>Type: {product.Varetype}</p>
             <p>Volum: {product.Volum} liter</p>
             <p>Alkohol: {product.Alkohol} %</p>
             <p>Land: {product.Land}</p>

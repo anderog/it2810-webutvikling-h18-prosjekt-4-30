@@ -7,6 +7,8 @@ import SearchField from "./SearchField";
 import "../styles/TitleBar.css";
 
 class TitleBar extends React.Component {
+  // Renders Navbar from reactstrap including SearchField
+  // Sets up and render the information for the info button
   render() {
     return (
       <div>
@@ -31,7 +33,11 @@ class TitleBar extends React.Component {
         >
           Velkommen til Polutforsker! <br />
           Nettsiden er basert på Vinmonopolets database, som finnes
-          <a href="https://www.vinmonopolet.no/datadeling" target="_blank">
+          <a
+            href="https://www.vinmonopolet.no/datadeling"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
             {" "}
             her.
           </a>

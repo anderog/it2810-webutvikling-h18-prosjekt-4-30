@@ -3,11 +3,16 @@ import { connect } from "react-redux";
 
 import "../styles/Pagination.css";
 
+// This component contains functionality for switching pages
 class Pagination extends React.Component {
+  // Dispatch to increment the page number by 1
+  // Triggers a state change
   increment = () => {
     this.props.dispatch({ type: "PAGE_INCREMENT" });
   };
 
+  // Dispatch to decrement the page number by 1
+  // Triggers a state change
   decrement = () => {
     if (this.props.page > 1) {
       this.props.dispatch({ type: "PAGE_DECREMENT" });
@@ -23,11 +28,16 @@ class Pagination extends React.Component {
       return (
         <div className="wrapper">
           <div>
-            <button onClick={this.decrement} disabled={this.props.page === 1}>
+            <button
+              className="decrementButton"
+              onClick={this.decrement}
+              disabled={this.props.page === 1}
+            >
               &lt;
             </button>
             <span>{`${this.props.page} av ${this.props.totalPages}`}</span>
             <button
+              className="incrementButton"
               onClick={this.increment}
               disabled={
                 this.props.page === this.props.totalPages ||
@@ -45,6 +55,7 @@ class Pagination extends React.Component {
   }
 }
 
+// Maps the global redux-state to props
 const mapStateToProps = state => ({
   products: state.products.items,
   page: state.page.page,

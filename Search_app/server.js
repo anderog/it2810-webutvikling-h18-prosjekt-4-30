@@ -8,6 +8,7 @@ const reviews = require("./routes/api/reviews");
 const app = express();
 
 // Middleware for BodyParser
+// body-parser: extract the entire body portion of incoming request and exposes it on request.body
 app.use(bodyParser.json());
 
 // MongoDB config og connection

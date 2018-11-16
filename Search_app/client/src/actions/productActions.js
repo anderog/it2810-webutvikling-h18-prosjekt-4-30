@@ -6,6 +6,7 @@ const urlPrefix =
     : "/api";
 
 // Fetch products from given api URL
+// Generates URL queries from given global states
 export const fetchProducts = () => (dispatch, getState) => {
   const search =
     getState().form.searchValue &&

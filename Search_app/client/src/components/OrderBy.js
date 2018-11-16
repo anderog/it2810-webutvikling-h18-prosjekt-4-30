@@ -1,23 +1,22 @@
 import React from "react";
 import { connect } from "react-redux";
 import { fetchProducts } from "../actions/productActions";
-import {
-  ButtonDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem
-} from "reactstrap";
+import { ButtonDropdown, DropdownToggle, DropdownMenu } from "reactstrap";
 import "../styles/OrderBy.css";
 
+// This component is a dropdown menu with sorting options
 class OrderBy extends React.Component {
   constructor(props) {
     super(props);
+
+    // Sets the component default state for the dropdown
     this.state = {
       dropdownOpen: false,
       dropdownText: "Sorter etter"
     };
   }
 
+  // Changes the state for the dropdown
   toggleDropdown = () => {
     this.setState({
       dropdownOpen: !this.state.dropdownOpen
@@ -63,16 +62,16 @@ class OrderBy extends React.Component {
           {this.state.dropdownText}
         </DropdownToggle>
         <DropdownMenu>
-          <button className="priceButton" onClick={this.priceAsc}>
+          <button className="priceAscButton" onClick={this.priceAsc}>
             Pris (lavest først)
           </button>
-          <button className="priceButton" onClick={this.priceDesc}>
+          <button className="priceDescButton" onClick={this.priceDesc}>
             Pris (høyest først)
           </button>
-          <button className="priceButton" onClick={this.nameAsc}>
+          <button className="nameAscButton" onClick={this.nameAsc}>
             Navn (stigende)
           </button>
-          <button className="nameButton" onClick={this.nameDesc}>
+          <button className="nameDescButton" onClick={this.nameDesc}>
             Navn (synkende)
           </button>
         </DropdownMenu>
