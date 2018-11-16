@@ -11,10 +11,18 @@ import ProductInformation from "./ProductInformation";
 import "../styles/Products.css";
 
 class Products extends Component {
+  state = {
+    prevProps: this.props.page
+  };
+
+  // Fetch products whenever component renders
   componentWillMount() {
     this.props.fetchProducts();
   }
 
+  // Called directly after rendering
+  // Checks if the received page prop is different from se component state prop prevProps
+  // If True -> on different page and execute a fetch for this page.
   componentDidUpdate(prevProps) {
     if (this.props.page !== prevProps.page) {
       this.props.fetchProducts();
@@ -22,6 +30,7 @@ class Products extends Component {
   }
 
   render() {
+    // Renders a collapsible list from the resived productItems-list
     const productItems = this.props.products.map(item => (
       <div key={item._id}>
         <Collapsible trigger={item.Varenavn} className="inner">
@@ -31,6 +40,7 @@ class Products extends Component {
       </div>
     ));
 
+    // Checks if still loading content, return loding-dots else return the productItems-list
     return (
       <div className="list">
         {this.props.loading ? (
@@ -44,6 +54,7 @@ class Products extends Component {
   }
 }
 
+// Maps the global redux-state to props
 const mapStateToProps = state => ({
   products: state.products.items,
   loading: state.products.loading,

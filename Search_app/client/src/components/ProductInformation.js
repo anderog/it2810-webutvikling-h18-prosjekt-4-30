@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "../styles/ProductInformation.css";
 
 export default class ProductInformation extends Component {
+  // Sets up and render the expanded product information
   render() {
     const product = this.props.productItem;
     return (

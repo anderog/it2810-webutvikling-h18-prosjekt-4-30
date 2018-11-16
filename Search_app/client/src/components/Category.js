@@ -4,6 +4,8 @@ import { fetchProducts } from "../actions/productActions";
 import "../styles/Category.css";
 import { Collapse } from "reactstrap";
 
+//Component contains functionality for the dropdown menu containing different
+//product types
 class Category extends React.Component {
   constructor(props) {
     super(props);
@@ -13,7 +15,10 @@ class Category extends React.Component {
       buttonText: "+"
     };
   }
-
+  //Based on selected category, the state is set in order to later generate
+  //a proper query
+  //Note that PAGE_RESET is called. This is because the user should be viewing
+  //the first page when switching categories
   typeReset = () => {
     this.props.dispatch({ type: "TYPE_RESET" });
     this.props.dispatch({ type: "PAGE_RESET" });
@@ -79,7 +84,6 @@ class Category extends React.Component {
     });
   };
 
-  // Typer som kan legges til, Druebrennevin, Likør, India pale ale, Sider, Vodka
   render() {
     return (
       <div className="wrapper">

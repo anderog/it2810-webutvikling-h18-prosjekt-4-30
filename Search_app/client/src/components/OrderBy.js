@@ -4,15 +4,19 @@ import { fetchProducts } from "../actions/productActions";
 import { ButtonDropdown, DropdownToggle, DropdownMenu } from "reactstrap";
 import "../styles/OrderBy.css";
 
+// This component is a dropdown menu with sorting options
 class OrderBy extends React.Component {
   constructor(props) {
     super(props);
+
+    // Sets the component default state for the dropdown
     this.state = {
       dropdownOpen: false,
       dropdownText: "Sorter etter"
     };
   }
 
+  // Changes the state for the dropdown
   toggleDropdown = () => {
     this.setState({
       dropdownOpen: !this.state.dropdownOpen
